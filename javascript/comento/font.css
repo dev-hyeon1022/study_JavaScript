@@ -1,0 +1,32 @@
+@font-face {
+    font-display: swap;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://cdn.comento.kr/fonts/pretendard/Pretendard-Light.subset.woff2) format("woff2"),url(https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/fonts/pretendard/Pretendard-Light.subset.woff2) format("woff2"),url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff) format("woff")
+  }
+  
+  @font-face {
+    font-display: swap;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://cdn.comento.kr/fonts/pretendard/Pretendard-Regular.subset.woff2) format("woff2"),url(https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/fonts/pretendard/Pretendard-Regular.subset.woff2) format("woff2"),url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff) format("woff")
+  }
+  
+  @font-face {
+    font-display: swap;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://cdn.comento.kr/fonts/pretendard/Pretendard-Medium.subset.woff2) format("woff2"),url(https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/fonts/pretendard/Pretendard-Medium.subset.woff2) format("woff2"),url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff) format("woff")
+  }
+  
+  @font-face {
+    font-display: swap;
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://cdn.comento.kr/fonts/pretendard/Pretendard-SemiBold.subset.woff2) format("woff2"),url(https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/fonts/pretendard/Pretendard-SemiBold.subset.woff2) format("woff2"),url(https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff) format("woff")
+  }
+  

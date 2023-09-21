@@ -1,0 +1,109 @@
+
+
+
+
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+
+*, :after, :before {
+    box-sizing: border-box;
+    outline: none;
+}
+
+@media only screen and (min-width: 768px) {
+    html ::-webkit-scrollbar-track {
+        background: #f3f4f5;
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    html ::-webkit-scrollbar-thumb {
+        background: #eaecee;
+        border-radius: 8px;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    html ::-webkit-scrollbar {
+        border: 3px solid #fff;
+        height: 8px;
+        width: 8px;
+    }
+}
+
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    border: 0;
+    font-family: "Pretendard","Apple SD Gothic Neo","Helvetica Neue",Helvetica,Arial,"Trebuchet MS",sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html {
+    line-height: 1.15;
+}
+
+body {
+    line-height: 1;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+article, aside, footer, header, nav, section {
+    display: block;
+}
+a, a:active, a:focus, a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    html {
+        scrollbar-3dLight-Color: #f3f4f5;
+        scrollbar-arrow-color: #eaecee;
+        scrollbar-base-color: #f3f4f5;
+        scrollbar-Face-Color: #eaecee;
+        scrollbar-Track-Color: #f3f4f5;
+        scrollbar-DarkShadow-Color: #f3f4f5;
+        scrollbar-Highlight-Color: #f3f4f5;
+        scrollbar-Shadow-Color: #f3f4f5;
+        overflow-y: scroll;
+    }
+}
+:root {
+    --swiper-theme-color: #007aff;
+}
+
+:root {
+    --swiper-navigation-size: 44px;
+}
+
+
+
+article, aside, body, div, footer, header, section {
+    user-select: text;
+}
+
+

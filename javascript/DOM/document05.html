@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체를 동적으로 생성, 삽입, 삭제</title>
+  </head>
+  <body>
+    <p>DOM 트리에 동적으로 객체를 삽입할 수 있다.</p>
+    <p>
+      createElement("태그명"), appendChild("태그객체"), removeChild("태그객체")
+    </p>
+    <p>위 3개의 메소드를 이용해서 새로운 객체를 생성, 삽입, 삭제한다.</p>
+    <a href="javascript:createDIV()">DIV 생성</a>
+  </body>
+  <script>
+    // Math.floor(Math.random() * n) : 0 ~ n-1 랜덤값
+
+    // 생성할 때마다 랜덤한 배경색이 출력되고,
+    // 각 DIV 객체 내용에 번호가 붙도록 한다.
+    function randomNumber(num) {
+      return Math.floor(Math.random() * num);
+    }
+
+    globalThis.count = 0;
+    let numberdata = [0];
+    function createDIV() {
+      numberdata.push(count);
+      const newDIV = document.createElement("div");
+      newDIV.innerHTML = `새로 생성된 div${++count}입니다.`;
+      newDIV.style.backgroundColor = `rgb(${randomNumber(256)},${randomNumber(
+        256
+      )},${randomNumber(256)})`;
+      document.body.appendChild(newDIV);
+
+      newDIV.onclick = function () {
+        this.parentElement.removeChild(this);
+        count--;
+      };
+    }
+  </script>
+</html>

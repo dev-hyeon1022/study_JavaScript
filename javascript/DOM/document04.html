@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 선택자를 이용한 선택</title>
+  </head>
+  <body>
+    <h1>CSS 선택자를 이용한 선택</h1>
+    <p>첫 번째 단락이에요!</p>
+    <ul>
+      <li class="odd">치킨</li>
+      <li class="even">집</li>
+      <li class="odd">플레이스테이션</li>
+      <li class="even">남자친구</li>
+      <li class="odd">여자친구</li>
+    </ul>
+  </body>
+  <script>
+    const p = document.querySelector("p");
+    const oddList = document.querySelectorAll("li.odd");
+    const evenList = document.querySelectorAll("li.even");
+    const list = document.querySelectorAll("li");
+
+    // innerHTML은 값 안에 태그를 태그로 인식하여 표현한다.
+    p.innerHTML = "<h1>반갑습니다!</h1>";
+    // innerText는 값 안에 태그를 문자열로 인식하여 문자 그대로 출력된다.
+    // p.innerText = "<h1>반갑습니다!</h1>";
+
+    // 홀수의 글자 크기는 22px로, 짝수의 글자 크기는 14px로 변경하고,
+    // oddList.forEach((odd) => odd.style.fontSize = "22px");
+    // evenList.forEach((even) => even.style.fontSize = "14px");
+    list.forEach(
+      (li) => (li.style.fontSize = li.className === "odd" ? "22px" : "14px")
+    );
+
+    // 전체 목록 중에 "친구"가 포함되어 있다면 글자색을 빨간색으로 변경하기
+    NodeList.prototype.filter = Array.prototype.filter;
+    list
+      .filter((li) => li.innerText.includes("친구"))
+      .forEach((li) => (li.style.color = "red"));
+  </script>
+</html>

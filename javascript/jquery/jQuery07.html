@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fetch</title>
+  <style>
+    #wrap {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .photo {
+      margin-right: 10px;
+      float: left;
+    }
+
+    #paging {
+      text-align: center;
+      clear: left;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap"></div>
+  <div id="paging"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>  
+  let page = 1;
+  
+  async function requestPhotos(){
+    return fetch("https://jsonplaceholder.typicode.com/photos").then((response) => response.json())
+  }
+
+  async function getPhotos(){
+    const photos = await requestPhotos();
+    return new Promise((resolve) => {
+      if(photos.length != 0){
+        resolve({
+          total: photos.length,
+          photos: photos.reverse()
+        })
+      }
+    });
+  }
+  
+  function showPhotos(props){
+    console.log(props);
+
+    // 비구조 할당
+    // KEY값으로만 가능!
+    const {total, photos} = props;
+    
+    const rowCount = 10;
+    const limit = page * rowCount;
+    const offset = limit - rowCount;
+    const pageCount = 5;
+    const endPage = Math.ceil(page / pageCount) * pageCount;
+    const startPage = endPage - pageCount + 1;
+    const realEnd = Math.ceil(total / rowCount);
+    const $wrap = $("#wrap");
+    const $paging = $("#paging");
+
+    const photosWithPage = photos.slice(offset, limit);
+
+    let text = ``, pagingText = ``;
+    photosWithPage.forEach((photo) => {
+      text += `
+        <div class="photo">
+          <img src="${photo.thumbnailUrl}">
+        </div>
+      `
+    });
+    if(startPage > 1){
+      pagingText += `
+        <a href="javascript:void(0)"><span class="${1}">맨 앞으로 이동</span></a>
+        <a href="javascript:void(0)"><img class="${startPage - 1}" src="left.png" width="20px"></a>
+      `;
+    }
+    for(let i=startPage; i<=endPage; i++){
+      if(page === i){
+        pagingText += `
+          <span>${i}</span>
+      `;
+      }else{
+        pagingText += `
+          <a href="javascript:void(0)"><span class="${i}">${i}</span></a>
+        `;
+      }
+    }
+    if(endPage < realEnd){
+      pagingText += `
+        <a href="javascript:void(0)"><img class="${endPage + 1}" src="right.png" width="20px"></a>
+        <a href="javascript:void(0)"><span class="${realEnd}">맨 끝으로 이동</span></a>
+      `;
+    }
+    
+
+    $wrap.html(text); 
+    $paging.html(pagingText);
+  }
+
+  getPhotos().then(showPhotos)
+
+  const $paging = $("#paging");
+  $paging.on("click", (e) => {
+    if(e.target.className){
+      page = parseInt(e.target.className);
+      getPhotos().then(showPhotos);
+    }
+  });
+  
+
+</script>
+</html>
